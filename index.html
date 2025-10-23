@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DarkSideOfii — Гарант</title>
+  <meta name="description" content="Услуги гаранта, безопасные сделки — DarkSideOfii">
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#6b21a8;--muted:#94a3b8;--glass: rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,Helvetica,Arial;background:linear-gradient(180deg,#071024 0%, #081226 100%);color:#e6eef8}
+    header{background:linear-gradient(90deg, rgba(107,33,168,0.15), rgba(3,7,18,0));backdrop-filter: blur(6px);padding:18px 24px;position:sticky;top:0;z-index:50}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    nav{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:46px;height:46px;border-radius:10px;background:url('8cee39a2-da58-435f-a06b-b54ab10a1ab4.png') center/cover no-repeat}
+    .logo span{display:none}
+    .navlinks a{margin-left:18px;color:var(--muted);text-decoration:none}
+    .hero{display:flex;gap:32px;align-items:center;padding:40px 0}
+    .hero-left{flex:1}
+    h1{font-size:34px;margin:0 0 12px 0}
+    p.lead{color:var(--muted);margin:0 0 18px 0}
+    .cta{display:inline-block;padding:10px 16px;border-radius:10px;background:var(--accent);color:white;text-decoration:none;font-weight:600}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
+    footer{padding:30px 0;color:var(--muted)}
+    .contacts{display:flex;gap:12px;flex-wrap:wrap}
+    input,textarea,button{font-family:inherit}
+    form .row{display:flex;gap:8px}
+    @media(max-width:720px){.hero{flex-direction:column}.navlinks{display:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="logo"></div>
+          <div>
+            <div style="font-weight:700">DarkSideOfii</div>
+            <div style="font-size:12px;color:var(--muted)">Гарант / Безопасные сделки</div>
+          </div>
+        </div>
+        <div class="navlinks">
+          <a href="#services">Услуги</a>
+          <a href="#how">Как это работает</a>
+          <a href="#contacts">Контакты</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h1>DarkSideOfii — надёжный гарант для ваших сделок</h1>
+        <p class="lead">Оказываем услуги гаранта при обменах и продажах внутри сообществ. Честно, прозрачно, быстро.</p>
+        <a class="cta" href="https://t.me/DarkSideOffii?text=Здравствуйте,%20нужен%20гарант%0AСуть%20сделки%20-%20%0AВалюта%20-%20%0AПродавец%20-%20%0AПокупатель%20-" target="_blank">Написать в Telegram</a>
+
+        <div class="features card">
+          <div>
+            <h3 style="margin:0 0 8px 0">Безопасность</h3>
+            <p style="margin:0;color:var(--muted)">Сделки проходят через проверённый процесс с отчётностью и скриншотами.</p>
+          </div>
+          <div>
+            <h3 style="margin:0 0 8px 0">Опыт</h3>
+            <p style="margin:0;color:var(--muted)">Множество успешно завершённых сделок и положительных отзывов.</p>
+          </div>
+          <div>
+            <h3 style="margin:0 0 8px 0">Прозрачность</h3>
+            <p style="margin:0;color:var(--muted)">Чёткие условия и фиксированный алгоритм действий гаранта.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="width:360px;min-width:260px" class="card">
+        <h3 style="margin-top:0">Форма запроса гаранта</h3>
+        <form id="requestForm">
+          <label style="font-size:13px;color:var(--muted)">Короткое описание сделки</label>
+          <textarea id="desc" rows="4" style="width:100%;margin-bottom:8px;border-radius:8px;padding:8px;background:var(--glass);border:1px solid rgba(255,255,255,0.04);color:inherit"></textarea>
+          <label style="font-size:13px;color:var(--muted)">Ваш Telegram (ник или ссылка)</label>
+          <input id="tg" type="text" style="width:100%;margin:8px 0 12px 0;border-radius:8px;padding:8px;background:var(--glass);border:1px solid rgba(255,255,255,0.04);color:inherit">
+          <button type="button" class="cta" style="width:100%" onclick="sendPrefilled()">Открыть чат с черновиком</button>
+        </form>
+        <p style="font-size:12px;color:var(--muted);margin-top:10px">Нажатие откроет Telegram с предзаполненным текстом — пользователь сможет отредактировать перед отправкой.</p>
+      </div>
+    </section>
+
+    <section id="services" style="margin-top:26px">
+      <div class="card">
+        <h2>Наши услуги</h2>
+        <ul style="color:var(--muted)">
+          <li>Гарант при передаче внутриигровых активов и валюты</li>
+          <li>Проверка продавца/покупателя по рискам</li>
+          <li>Промежуточное хранение/подтверждение выполнения условий</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="how" style="margin-top:18px">
+      <div class="card">
+        <h2>Как это работает</h2>
+        <ol style="color:var(--muted)">
+          <li>Вы присылаете заявку с описанием сделки.</li>
+          <li>Гарант фиксирует условия и подтверждает участие.</li>
+          <li>После выполнения условий гарант подтверждает передачу.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="contacts" style="margin-top:18px">
+      <div class="card">
+        <h2>Контакты</h2>
+        <div class="contacts">
+          <div>
+            <strong>Telegram:</strong> <a href="https://t.me/DarkSideOffii" target="_blank">@DarkSideOffii</a>
+          </div>
+          <div>
+            <strong>Email:</strong> <a href="mailto:contactdarksideoffi@gmail.com">contactdarksideoffi@gmail.com</a>
+          </div>
+          <div>
+            <strong>Домен:</strong> darksideoffigarant.ru
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div>© <strong>DarkSideOfii</strong> — Все права защищены.</div>
+        <div style="color:var(--muted);font-size:13px">Разработано: шаблон для быстрого запуска</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function sendPrefilled(){
+      const desc = encodeURIComponent(document.getElementById('desc').value || 'Здравствуйте, нужен гарант%0AСуть сделки - %0AВалюта - %0AПродавец - %0AПокупатель -');
+      const url = 'https://t.me/DarkSideOffii?text=' + desc;
+      window.open(url,'_blank');
+    }
+  </script>
+</body>
+</html>
